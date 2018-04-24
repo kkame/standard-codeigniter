@@ -15,6 +15,14 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 
+# Docker
+docker-compose.yml
+Dockerfile-php
+Dockerfile-node
+
+# Node
+node_modules
+
 # IDE Files
 #-------------------------
 /nbproject/
