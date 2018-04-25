@@ -1,18 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtraTextWebpackPlugin = require('extract-text-webpack-plugin');
-const WebpackNodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+/**
+ * TODO - BrowserSync 추가
+ * TODO - html-webpack-plugin 적용
+ */
 module.exports = {
     target: "node",
-/*    externals: [WebpackNodeExternals()],*/
     entry: {
         app: './resources/app.js'
     },
     output: {
         path: path.join(__dirname, 'htdocs/public'),
         filename: '[name].js',
-        publicPath: "/",
+        publicPath: "/public/",
     },
     module: {
         rules: [
@@ -27,7 +29,10 @@ module.exports = {
                 }
             }, {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ],
             },  {
                 test: /\.(woff|woff2|ttf|svg)$/,
                 use: [
@@ -49,8 +54,8 @@ module.exports = {
         ],
     },
     plugins: [
-        new ExtraTextWebpackPlugin({
-            filename: '[name].css',
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
         }),
         new webpack.DefinePlugin({
             'global': {}, // bizarre lodash(?) webpack workaround
