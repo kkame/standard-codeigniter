@@ -1,4 +1,6 @@
 {
+    "name": "airteltour/standard-codeigniter",
+    "description": "에어텔닷컴의 코드이그나이터 표준 코딩가이드 정리를 위한 프로젝트입니다",
     "require": {
         "codeigniter/framework": "^3.1"
     }
