@@ -61,6 +61,8 @@ die('This file is used for development purposes only.');
  * @property CI_Xmlrpcs          $xmlrpcs                             XML-RPC server class
  * @property CI_Zip              $zip                                 Zip Compression Class
  * @property CI_Utf8             $utf8                                Provides support for UTF-8 environments
+ *
+ * @property Console    $console
  */
 class CI_Controller {
     public function __construct()
