@@ -12,9 +12,8 @@ module.exports = {
         app: './resources/app.js'
     },
     output: {
-        path: path.join(__dirname, 'htdocs/public'),
+        path: path.join(__dirname, 'htdocs'),
         filename: '[name].js',
-        publicPath: "/public/",
     },
     module: {
         rules: [
