@@ -1,9 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends BASE_Controller {
 
-	/**
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
+    /**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
@@ -20,6 +27,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+
+        $this->console->exception(new Exception('test exception'));
+        $this->console->debug('Debug message');
+        $this->console->info('Info message');
+        $this->console->warning('Warning message');
+        $this->console->error('Error message');
+
 		$this->load->view('welcome_message');
 	}
 }
