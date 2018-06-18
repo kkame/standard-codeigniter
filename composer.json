@@ -1,7 +1,9 @@
 {
     "name": "airteltour/standard-codeigniter",
     "description": "에어텔닷컴의 코드이그나이터 표준 코딩가이드 정리를 위한 프로젝트입니다",
+    "license":"MIT",
     "require": {
+        "php":"^7.1",
         "codeigniter/framework": "^3.1",
         "tan5en5/codeigniter-debugbar": "dev-master"
     }
